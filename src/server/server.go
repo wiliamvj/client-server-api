@@ -14,7 +14,7 @@ import (
 )
 
 const (
-  dbFile       = "database/currencies.db"
+  dbFile       = "currencies.db"
   table        = "currencies"
   quotationURL = "https://economia.awesomeapi.com.br/json/last/USD-BRL"
 )
