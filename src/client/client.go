@@ -18,14 +18,6 @@ func Client() {
   ctx, cancel := context.WithTimeout(context.Background(), 300*time.Millisecond)
   defer cancel()
 
-  select {
-  case <-time.After(300 * time.Millisecond):
-    fmt.Println("Quotation processed with successfully in client!")
-  case <-ctx.Done():
-    fmt.Println("Context in client is canceled!")
-  default:
-  }
-
   req, err := http.NewRequestWithContext(ctx, "GET", "http://localhost:8080/cotacao", nil)
   if err != nil {
     panic(err)
